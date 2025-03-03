@@ -27,7 +27,7 @@ For this project, I configured two virtual machines (VMs): one with Windows Serv
 Start by heading to Microsoft Azure and creating a resource group.
 </p>
 
-<img src="https://i.ibb.co/gFhP6NQW/Screenshot-3-3-2025-105941-portal-azure-com.jpg" alt=""/>
+![alt text](https://i.ibb.co/gFhP6NQW/Screenshot-3-3-2025-105941-portal-azure-com.jpg)
 <p align="center">
 Next, we will create a Virtual Network.
 </p>
@@ -40,7 +40,7 @@ After creating both the resource group and virtual network, we'll move on to cre
 
 <img src="https://i.ibb.co/wrRnhRxB/Screenshot-3-3-2025-111112-portal-azure-com.jpg" alt=""/>
 
-<img src="https://i.ibb.co/9mmktzdw/Screenshot-3-3-2025-111353-portal-azure-com.jpg" alt=""/>
+![alt text](https://i.ibb.co/9mmktzdw/Screenshot-3-3-2025-111353-portal-azure-com.jpg)
 
 
 </p>In the Virtual Machine's Networking tab, we need to ensure that it is configured to connect to the virtual network we set up earlier </p>
