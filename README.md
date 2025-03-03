@@ -27,7 +27,7 @@ For this project, I configured two virtual machines (VMs): one with Windows Serv
 Start by heading to Microsoft Azure and creating a resource group.
 </p>
 
-<img src="https://i.ibb.co/C9Mjwwp/1.jpg" alt=""/>
+<img src="https://i.ibb.co/gFhP6NQW/Screenshot-3-3-2025-105941-portal-azure-com.jpg" alt=""/>
 <p align="center">
 Next, we will create a Virtual Network.
 </p>
