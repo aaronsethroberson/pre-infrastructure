@@ -42,7 +42,6 @@ After creating both the resource group and virtual network, we'll move on to cre
 
 <img src="https://i.ibb.co/9mmktzdw/Screenshot-3-3-2025-111353-portal-azure-com.jpg" alt=""/>
 
-<br/>
 
 </p>In the Virtual Machine's Networking tab, we need to ensure that it is configured to connect to the virtual network we set up earlier </p>
 
