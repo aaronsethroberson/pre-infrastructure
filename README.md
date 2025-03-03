@@ -27,94 +27,93 @@ For this project, I configured two virtual machines (VMs): one with Windows Serv
 Start by heading to Microsoft Azure and creating a resource group.
 </p>
 
-![image](https://github.com/user-attachments/assets/ecd6b747-791a-4fab-b70a-060057ecebf0)
-
+<img src="https://i.ibb.co/C9Mjwwp/1.jpg" alt=""/>
 <p align="center">
 Next, we will create a Virtual Network.
 </p>
 
-![image](https://github.com/user-attachments/assets/59c00f49-4853-488b-9d8c-bd7417c62aee)
+<img src="https://i.ibb.co/qY0d7yF2/Screenshot-3-3-2025-11353-portal-azure-com.jpg" alt=""/>
 
 <p>
 After creating both the resource group and virtual network, we'll move on to creating and setting up our virtual machine, which will serve as the Domain Controller (running Windows Server 2022).
 </p>
 
-![image](https://github.com/user-attachments/assets/afab89dc-8e8e-45c0-9f55-3406fcd449e9)
+<img src="https://i.ibb.co/wrRnhRxB/Screenshot-3-3-2025-111112-portal-azure-com.jpg" alt=""/>
 
-![image](https://github.com/user-attachments/assets/fe7b7d05-701a-4ed7-92d4-15ed9293d81b)
+<img src="https://i.ibb.co/9mmktzdw/Screenshot-3-3-2025-111353-portal-azure-com.jpg" alt=""/>
 
 <br />
 
 </p>In the Virtual Machine's Networking tab, we need to ensure that it is configured to connect to the virtual network we set up earlier </p>
 
-![image](https://github.com/user-attachments/assets/0d162eb8-200f-4a5a-8f6e-d8eeb4d1de3a)
+<img src="https://i.ibb.co/DfKMgBJP/Screenshot-3-3-2025-111539-portal-azure-com.jpg" alt=""/>
 
 <p>Next, we will create a second virtual machine to serve as the client. For this VM, the image should be Windows 10, not Windows Server</p>
 
-![image](https://github.com/user-attachments/assets/b39c7903-30b7-4064-ab6b-fe4a7abdfdbf)
+<img src="https://i.ibb.co/SDfZ921R/Screenshot-3-3-2025-112823-portal-azure-com.jpg" alt=""/>
 
-![image](https://github.com/user-attachments/assets/5a6d5e06-91a0-4e76-91e6-1945abb8ff2f)
+<img src="https://i.ibb.co/7tHJ4p2b/Screenshot-3-3-2025-112939-portal-azure-com.jpg" alt=""/>
 
 <p>In the Virtual Machine's Networking tab, we need to ensure that it is configured to connect to the virtual network we set up earlier.</p>
 
-![image](https://github.com/user-attachments/assets/b90bd423-583c-47b4-afb3-45267b1d45f6)
+<img src="https://i.ibb.co/7JG7Zp31/Screenshot-3-3-2025-113018-portal-azure-com.jpg" alt=""/>
 
 <p>I need to change the Domain Controller's private IP address from dynamic to static since it will also serve as a DNS server. A static IP ensures the DNS configuration remains valid for the client. I'll update this in the DC's network settings.</p>
 
-![image](https://github.com/user-attachments/assets/a21af208-ca09-411e-ae32-cb65c3c6a910)
-![image](https://github.com/user-attachments/assets/3fbf5935-ac8f-488c-b848-f3010613d620)
+<img src="https://i.ibb.co/nq4kj1gW/Screenshot-3-3-2025-114045-portal-azure-com.jpg" alt=""/>
+<img src="https://i.ibb.co/Q7jnMj1p/Screenshot-3-3-2025-114247-portal-azure-com.jpg" alt=""/>
 
 <p>Next, we'll use Remote Desktop along with the Domain Controller's public IP address and the login credentials we set up during the Virtual Machine configuration</p>
 
-![image](https://github.com/user-attachments/assets/111958d5-2ce5-4da4-86f7-9a58823c977d)
+<img src="https://i.ibb.co/TxmxtM6j/Screenshot-2025-03-03-114924.png" alt=""/>
 
 <p align="center">
 After logging into the Domain Controller, you should see the Server Manager screen displayed.
 </p>
 
-![Screenshot 2024-10-02 144622](https://github.com/user-attachments/assets/c3c871a4-1500-4715-a601-126531d6d652)
+<img src="https://i.ibb.co/1t620tnm/Screenshot-2025-03-03-115311.png" alt=""/>
 
 <p align="center">
 To disable the firewall, I’ll right-click the "Start" button and select "Run." Then, I'll type "wf.msc".
 </p>
 
-![image](https://github.com/user-attachments/assets/ffa1b34c-a5a0-43c4-a02a-f712fd0757e0)
+<img src="https://i.ibb.co/N2BzzD6z/Screenshot-2025-03-03-115530.png" alt=""/>
 
 <p align="center">
 Click on "Windows Defender Firewall Properties," then disable the firewall state under the "Domain Profile," "Private Profile," and "Public Profile" tabs.
 </p>
 
-![image](https://github.com/user-attachments/assets/a36dca60-fc80-4122-9cc5-fcefeaffb92c)
-![image](https://github.com/user-attachments/assets/3c7b4f9e-f82b-4db5-acf4-f204df1f9ff8)
+<img src="https://i.ibb.co/Q7P8sNM0/Screenshot-2025-03-03-115748.png" alt=""/>
+<img src="https://i.ibb.co/xTTpJm3/Screenshot-2025-03-03-115935.png" alt=""/>
 
 <p align="center">
 Next, we need to configure the client's DNS settings to point to the Domain Controller. To do this, we’ll return to Microsoft Azure to obtain the Domain Controller's private IP address</p>
 
-![image](https://github.com/user-attachments/assets/1151fa43-c461-4e5a-978d-63b9c8036599)
+<img src="https://i.ibb.co/k63vzZ70/Screenshot-2025-03-03-120122.png" alt=""/>
 
 <p>Next, I’ll navigate to the client machine’s network settings, select the NIC (Network Interface Card), go to settings, and then DNS servers. I'll change the option from "Inherit from virtual network" to "Custom," enter the Domain Controller’s private IP, and save the changes.</p>
 
-![image](https://github.com/user-attachments/assets/7d6a1744-a68c-47dc-96b6-7f2f96ee1afa)
+<img src="https://i.ibb.co/MFMt3Xj/Screenshot-2025-03-03-120418.png" alt=""/>
 
 <p align="center">
 After that is completed, we will restart the client Virtual Machine</p>
 
-![image](https://github.com/user-attachments/assets/c5b55841-f42f-4b06-97ad-11c08f886ffb)
+<img src="https://i.ibb.co/bMBLXHgr/Screenshot-2025-03-03-120629.png" alt=""/>
 
 <p align="center">
 After the machine restarts, I’ll use Remote Desktop to connect to the client machine using its public IP and the login credentials I set up during its configuration
 </p>
 
-![image](https://github.com/user-attachments/assets/7f36ffe5-c802-4ea7-8f42-1f8857d51c5a)
+<img src="https://i.ibb.co/HpxH9KBc/Screenshot-2025-03-03-121802.png" alt=""/>
 
 <p>Now that I'm logged in, I'll open PowerShell and ping the Domain Controller using its private IP. If there's a timeout error, ensure both machines are on the same virtual network in Azure, as this could be the issue.</p>
 
-![image](https://github.com/user-attachments/assets/70c23a03-a89a-4705-b0fb-287d9d70d3c2)
+<img src="https://i.ibb.co/ynzX4XcD/Screenshot-2025-03-03-123309.png" alt=""/>
 
 <p align="center">
 I'll run "ipconfig /all" and check the "DNS Servers" section. It should point to our Domain Controller if everything is set up correctly.
 </p>
 
-![image](https://github.com/user-attachments/assets/9b7f2a23-2948-42cd-b81b-f170d76ef569)
+<img src="https://i.ibb.co/W4sQ497z/Screenshot-2025-03-03-123350.png" alt=""/>
 
 
