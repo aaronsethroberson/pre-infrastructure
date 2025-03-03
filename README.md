@@ -25,20 +25,20 @@ For this project, I configured two virtual machines (VMs): one with Windows Serv
 <br />
 <br />
 
-Start by heading to Microsoft Azure and creating a resource group.
+Begin by navigating to Microsoft Azure and setting up a resource group.
 <br />
 
 ![alt text](https://i.ibb.co/gFhP6NQW/Screenshot-3-3-2025-105941-portal-azure-com.jpg)
 <br />
 <br />
 
-Next, we will create a Virtual Network.
+Next, we will set up a Virtual Network.
 
 <img src="https://i.ibb.co/qY0d7yF2/Screenshot-3-3-2025-11353-portal-azure-com.jpg" alt=""/>
 <br />
 <br />
 
-After creating both the resource group and virtual network, we'll move on to creating and setting up our virtual machine, which will serve as the Domain Controller (running Windows Server 2022).
+Once the resource group and virtual network are created, we'll proceed with setting up a virtual machine running Windows Server 2022, which will function as the Domain Controller.
 
 <img src="https://i.ibb.co/wrRnhRxB/Screenshot-3-3-2025-111112-portal-azure-com.jpg" alt=""/>
 
@@ -46,13 +46,13 @@ After creating both the resource group and virtual network, we'll move on to cre
 <br />
 <br />
 
-In the Virtual Machine's Networking tab, we need to ensure that it is configured to connect to the virtual network we set up earlier.
+In the Virtual Machine's Networking tab, make sure it is set to connect to the virtual network created earlier.
 
 ![Image](https://github.com/user-attachments/assets/4ffaf355-8f2b-4bee-ad6a-8fe67bc64605)
 <br />
 <br />
 
-Next, we will create a second virtual machine to serve as the client. For this VM, the image should be Windows 10, not Windows Server.
+Next, we'll set up a second virtual machine to act as the client. This VM should use a Windows 10 image instead of Windows Server.
 
 ![Image](https://github.com/user-attachments/assets/4c0875f0-b90e-4bc2-a9e9-3c0dafecaaf1)
 
@@ -60,13 +60,13 @@ Next, we will create a second virtual machine to serve as the client. For this V
 <br />
 <br />
 
-In the Virtual Machine's Networking tab, we need to ensure that it is configured to connect to the virtual network we set up earlier.
+In the Virtual Machine's Networking tab, ensure it is configured to connect to the previously created virtual network.
 
 ![Image](https://github.com/user-attachments/assets/b79d5bd4-0708-4574-a261-29d96403b814)
 <br />
 <br />
 
-I need to change the Domain Controller's private IP address from dynamic to static since it will also serve as a DNS server. A static IP ensures the DNS configuration remains valid for the client. I'll update this in the DC's network settings.
+I need to set the Domain Controller's private IP address to static instead of dynamic, as it will also function as a DNS server. A static IP ensures the DNS configuration remains consistent for the client. I'll make this change in the DC's network settings.
 
 <img src="https://i.ibb.co/nq4kj1gW/Screenshot-3-3-2025-114045-portal-azure-com.jpg" alt=""/>
 
@@ -74,7 +74,7 @@ I need to change the Domain Controller's private IP address from dynamic to stat
 <br />
 <br />
 
-Next, we'll use Remote Desktop along with the Domain Controller's public IP address and the login credentials we set up during the Virtual Machine configuration.
+Next, we'll connect using Remote Desktop, utilizing the Domain Controller's public IP address and the login credentials created during the Virtual Machine setup.
 
 ![Image](https://github.com/user-attachments/assets/3fa3ffc7-2e06-42e9-b6d2-6a16aa5fa08a)
 <br />
