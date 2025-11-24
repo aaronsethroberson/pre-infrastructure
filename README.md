@@ -76,57 +76,57 @@ I need to set the Domain Controller's private IP address to static instead of dy
 
 Next, we'll connect using Remote Desktop, utilizing the Domain Controller's public IP address and the login credentials created during the Virtual Machine setup.
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/11.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/11.png" alt=""/>
 <br /11
 <br />
 
 After logging into the Domain Controller, you should see the Server Manager screen displayed.
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/12.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/12.png" alt=""/>
 <br />
 <br />
 
 To disable the firewall, I’ll right-click the "Start" button and select "Run." Then, I'll type "wf.msc".
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/13.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/13.png" alt=""/>
 <br />
 <br />
 
 Click on "Windows Defender Firewall Properties," then disable the firewall state under the "Domain Profile," "Private Profile," and "Public Profile" tabs.
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/14.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/14.png" alt=""/>
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/15.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/15.png" alt=""/>
 <br />
 <br />
 
 Next, we need to configure the client's DNS settings to point to the Domain Controller. To do this, we’ll return to Microsoft Azure to obtain the Domain Controller's private IP address</p>
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/16.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/16.png" alt=""/>
 <br />
 <br />
 
 Next, I’ll navigate to the client machine’s network settings, select the NIC (Network Interface Card), go to settings, and then DNS servers. I'll change the option from "Inherit from virtual network" to "Custom," enter the Domain Controller’s private IP, and save the changes.
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/17.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/17.png" alt=""/>
 <br />
 <br />
 
 After that is completed, we will restart the client Virtual Machine.
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/18.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/18.png" alt=""/>
 <br />
 <br />
 
 After the machine restarts, I’ll use Remote Desktop to connect to the client machine using its public IP and the login credentials I set up during its configuration
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/19.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/19.png" alt=""/>
 <br />
 <br />
 
 Now that I'm logged in, I'll open PowerShell and ping the Domain Controller using its private IP. If there's a timeout error, ensure both machines are on the same virtual network in Azure, as this could be the issue.
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/20.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/20.png" alt=""/>
 <br />
 <br />
 
