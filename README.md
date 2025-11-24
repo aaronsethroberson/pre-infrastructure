@@ -42,27 +42,27 @@ Once the resource group and virtual network are created, we'll proceed with sett
 
 <img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/3.jpg" alt=""/>
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/3.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/4.jpg" alt=""/>
 <br />
 <br />
 
 In the Virtual Machine's Networking tab, make sure it is set to connect to the virtual network created earlier.
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/3.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/5.jpg" alt=""/>
 <br />
 <br />
 
 Next, we'll set up a second virtual machine to act as the client. This VM should use a Windows 10 image instead of Windows Server.
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/3.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/6.jpg" alt=""/>
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/3.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/7.jpg" alt=""/>
 <br />
 <br />
 
 In the Virtual Machine's Networking tab, ensure it is configured to connect to the previously created virtual network.
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/3.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/8.jpg" alt=""/>
 <br />
 <br />
 
@@ -70,14 +70,14 @@ I need to set the Domain Controller's private IP address to static instead of dy
 
 <img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/9.jpg" alt=""/>
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/3.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/10.jpg" alt=""/>
 <br />
 <br />
 
 Next, we'll connect using Remote Desktop, utilizing the Domain Controller's public IP address and the login credentials created during the Virtual Machine setup.
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/3.jpg" alt=""/>
-<br />
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/11.jpg" alt=""/>
+<br /11
 <br />
 
 After logging into the Domain Controller, you should see the Server Manager screen displayed.
@@ -96,7 +96,7 @@ Click on "Windows Defender Firewall Properties," then disable the firewall state
 
 <img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/14.jpg" alt=""/>
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/3.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/15.jpg" alt=""/>
 <br />
 <br />
 
@@ -126,7 +126,7 @@ After the machine restarts, I’ll use Remote Desktop to connect to the client m
 
 Now that I'm logged in, I'll open PowerShell and ping the Domain Controller using its private IP. If there's a timeout error, ensure both machines are on the same virtual network in Azure, as this could be the issue.
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/3.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/20.jpg" alt=""/>
 <br />
 <br />
 
