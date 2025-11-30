@@ -132,6 +132,6 @@ Now that I'm logged in, I'll open PowerShell and ping the Domain Controller usin
 
 I'll run "ipconfig /all" and check the "DNS Servers" section. It should point to our Domain Controller if everything is set up correctly.
 
-<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/images/21.jpg" alt=""/>
+<img src="https://github.com/aaronsethroberson/pre-infrastructure/blob/main/images/21.png" alt=""/>
 <br />
 <br />
